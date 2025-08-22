@@ -1,161 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Siddharth Magdum - Portfolio</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Test</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0d1117;
+      color: #39ff14;
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Navbar -->
-    <nav>
-      <div class="nav-left">
-        <a href="#" class="nav-tab active" data-tab="home"><i class="fas fa-home"></i> Home</a>
-        <a href="#" class="nav-tab" data-tab="work"><i class="fas fa-briefcase"></i> Work</a>
-        <a href="#" class="nav-tab" data-tab="projects"><i class="fas fa-folder"></i> Projects</a>
-        <a href="#" class="nav-tab" data-tab="posts"><i class="fas fa-file-alt"></i> Posts</a>
-      </div>
-      <!-- Right side Say Hi button -->
-      <div class="nav-right">
-        <a href="mailto:magdumsiddharth111@gmail.com" class="say-hi">
-          <i class="fas fa-envelope"></i>
-          Say Hi
-        </a>
-      </div>
-    </nav>
-
-    <!-- Tab Content Sections -->
-    <div class="tab-content">
-      <!-- Home Tab Content -->
-      <div class="tab-pane active" id="home">
-        <!-- Profile Section -->
-        <section class="profile">
-          <img src="profile.jpg" alt="Profile Photo">
-          <div class="info">
-            <h1>Siddharth Magdum</h1>
-            <p>Software Developer and Cybersecurity Engineer based in India</p>
-            <hr>
-          </div>
-        </section>
-
-        <!-- Information/About Section -->
-        <section class="about-section">
-          <p>I am an aspiring software engineer based in India, currently focused on mastering full-stack development, cybersecurity, and first-principles thinking.</p>
-          
-          <p>I have experience working with Python, Node.js, Express, React, MongoDB, and building projects across web development, IoT, and AI-based systems. I am passionate about practical problem-solving and building applications that solve real-world challenges.</p>
-          
-          <p>I am actively exploring cybersecurity, penetration testing, and secure system design, and I have hands-on experience with Kali Linux, Metasploit, and other security tools. I also experiment with AI-driven projects, including recommender systems and automation workflows.</p>
-          
-          <p>I aim to transform my thinking from ordinary to first-principles reasoning and continuously upskill in software development, cybersecurity, and innovative project building.</p>
-          
-          <!-- <p>If you want to get in touch, feel free to <a href="mailto:magdumsiddharth111@gmail.com" class="email-link">email me</a>.</p> -->
-        </section>
-      </div>
-
-      <!-- Work Tab Content -->
-      <div class="tab-pane" id="work">
-        <section class="work-section">
-          <h2>Work Experience</h2>
-          <div class="work-item">
-            <h3>Software Developer</h3>
-            <p class="company">Startup Company, India</p>
-            <p class="duration">2023 - Present</p>
-            <p class="description">Working on full-stack development projects using modern technologies. Contributing to web applications, IoT systems, and AI-based solutions.</p>
-          </div>
-          <div class="work-item">
-            <h3>Cybersecurity Intern</h3>
-            <p class="company">Security Firm, India</p>
-            <p class="duration">2022 - 2023</p>
-            <p class="description">Gained hands-on experience with penetration testing, vulnerability assessment, and secure system design using tools like Kali Linux and Metasploit.</p>
-          </div>
-        </section>
-      </div>
-
-      <!-- Projects Tab Content -->
-      <div class="tab-pane" id="projects">
-        <section class="projects-section">
-          <h2>Featured Projects</h2>
-          <div class="project-grid">
-            <div class="project-item">
-              <h3>AI Recommender System</h3>
-              <p>Built an intelligent recommendation engine using Python and machine learning algorithms.</p>
-              <div class="tech-stack">Python, ML, Pandas, Scikit-learn</div>
-            </div>
-            <div class="project-item">
-              <h3>IoT Home Automation</h3>
-              <p>Developed a smart home automation system with real-time monitoring and control.</p>
-              <div class="tech-stack">Node.js, IoT, MQTT, React</div>
-            </div>
-            <div class="project-item">
-              <h3>Cybersecurity Dashboard</h3>
-              <p>Created a comprehensive security monitoring dashboard for network analysis.</p>
-              <div class="tech-stack">Python, Flask, Security Tools, MongoDB</div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Posts Tab Content -->
-      <div class="tab-pane" id="posts">
-        <section class="posts-section">
-          <h2>Latest Posts</h2>
-          <div class="post-item">
-            <h3>Getting Started with Cybersecurity</h3>
-            <p class="post-date">December 2023</p>
-            <p class="post-excerpt">A beginner's guide to understanding cybersecurity fundamentals and essential tools for penetration testing...</p>
-          </div>
-          <div class="post-item">
-            <h3>Building Secure Web Applications</h3>
-            <p class="post-date">November 2023</p>
-            <p class="post-excerpt">Best practices for implementing security measures in modern web applications...</p>
-          </div>
-          <div class="post-item">
-            <h3>AI in Software Development</h3>
-            <p class="post-date">October 2023</p>
-            <p class="post-excerpt">Exploring how artificial intelligence is transforming the software development landscape...</p>
-          </div>
-        </section>
-      </div>
-    </div>
-
-    <!-- Social Links -->
-    <section class="social-links">
-      <a href="https://github.com/siddharth116-sudo" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/siddharthmagdum/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://x.com/SiddharthM116" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
-      <a href="#" class="youtube-placeholder"><i class="fab fa-youtube"></i> YouTube</a>
-      <a href="mailto:magdumsiddharth111@gmail.com"><i class="fas fa-envelope"></i> Email</a>
-    </section>
-
-    <!-- Contact Text -->
-    <p class="contact-text">If you want to get in touch, feel free to <a href="mailto:magdumsiddharth111@gmail.com" class="email-link">email me</a>.</p>
-  </div>
-
-  <script>
-    // Tab switching functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      const tabs = document.querySelectorAll('.nav-tab');
-      const tabPanes = document.querySelectorAll('.tab-pane');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          // Remove active class from all tabs and panes
-          tabs.forEach(t => t.classList.remove('active'));
-          tabPanes.forEach(p => p.classList.remove('active'));
-          
-          // Add active class to clicked tab
-          this.classList.add('active');
-          
-          // Show corresponding content
-          const targetTab = this.getAttribute('data-tab');
-          document.getElementById(targetTab).classList.add('active');
-        });
-      });
-    });
-  </script>
+  ✅ Your GitHub Pages site is LIVE! 🚀
 </body>
 </html>
