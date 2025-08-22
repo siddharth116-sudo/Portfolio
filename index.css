@@ -1,0 +1,616 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #ffffff;
+}
+
+.container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 1.5rem;
+}
+
+/* Navbar */
+nav {
+  background: #1a1a1a;
+  border: none;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  text-transform: none;
+  backdrop-filter: none;
+  position: relative;
+  overflow: visible;
+  min-height: auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Left side navigation items */
+nav .nav-left {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Right side Say Hi button */
+nav .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Remove the animated background effect */
+nav::before {
+  display: none;
+}
+
+/* Links */
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  padding: 0.3rem 0;
+  white-space: nowrap;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: transparent;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* Active tab indicator */
+nav a.active {
+  position: relative;
+  color: #00ff99;
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+nav a.active::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  background: radial-gradient(circle, rgba(0, 255, 153, 0.15) 0%, transparent 70%);
+  border-radius: 12px;
+  z-index: -1;
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* Hover effect for active indicator */
+nav a.active:hover {
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px rgba(0, 255, 153, 0.8);
+}
+
+nav a.active:hover::after {
+  background: radial-gradient(circle, rgba(0, 255, 153, 0.25) 0%, transparent 70%);
+  animation: float 1s ease-in-out infinite;
+}
+
+/* Color shift animation for text */
+@keyframes colorShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Rotating border animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effect for active indicator */
+nav a.active:hover::before {
+  animation: rotate 1s linear infinite;
+}
+
+nav a.active:hover {
+  animation: colorShift 1.5s ease-in-out infinite;
+}
+
+/* Expand line animation */
+@keyframes expandLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+/* Icons */
+nav a i {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+nav a:hover i {
+  opacity: 1;
+}
+
+/* Active tab indicator base styles */
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: transparent;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-shadow: none;
+  transform: none;
+}
+
+/* Say Hi button - special styling like in the image */
+nav a.say-hi {
+  margin-left: 2rem;
+  background: #2a2a2a;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: 400;
+  border: 1px solid #3a3a3a;
+  transition: all 0.2s ease;
+}
+
+nav a.say-hi:hover {
+  background: #3a3a3a;
+  border-color: #4a4a4a;
+  transform: none;
+  color: #ffffff;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #e0e0e0;
+  width: 100%;
+  max-width: 700px;
+  justify-content: left;
+  /* background: #1a1a1a; */
+  border-radius: 40px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h1 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile p {
+  margin: 0.4rem 0 0 0;
+  color: #aaa;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* About Section */
+.about-section {
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.about-section p {
+  color: #e0e0e0;
+  font-size: 1rem;
+  margin: 0 0 1.2rem 0;
+  font-weight: 400;
+}
+
+.about-section p:last-child {
+  margin-bottom: 0;
+}
+
+.about-section .email-link {
+  color: #00ff99;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.about-section .email-link:hover {
+  color: #0affc6;
+  text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+  background: #1a1a1a;
+  padding: 0.8rem 1.2rem;
+  border-radius: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 700px;
+}
+
+.social-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0.3rem 0;
+}
+
+.social-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.social-links a:hover {
+  color: #00ff99;
+}
+
+.social-links a i {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.social-links a:hover i {
+  transform: scale(1.1);
+}
+
+/* YouTube Placeholder */
+.social-links .youtube-placeholder {
+  position: relative;
+  cursor: default;
+}
+
+.social-links .youtube-placeholder::before {
+  content: 'Future adding';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2a2a2a;
+  color: #00ff99;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border: 1px solid #3a3a3a;
+}
+
+.social-links .youtube-placeholder:hover::before {
+  opacity: 1;
+}
+
+.social-links .youtube-placeholder:hover {
+  color: #ffffff;
+  cursor: default;
+}
+
+.social-links .youtube-placeholder:hover::after {
+  transform: scaleX(0);
+}
+
+/* Contact Text Section */
+.contact-text {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+  padding: 1rem 0;
+}
+
+.contact-text .email-link {
+  color: #00ff99;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.contact-text .email-link:hover {
+  color: #0affc6;
+  text-decoration: underline;
+}
+
+/* Tab Content */
+.tab-content {
+  width: 100%;
+  max-width: 700px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* Work Section */
+.work-section {
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.work-section h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.work-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.work-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.work-item h3 {
+  color: #00ff99;
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.work-item .company {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0 0 0.3rem 0;
+  font-weight: 500;
+}
+
+.work-item .duration {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.work-item .description {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Projects Section */
+.projects-section {
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.projects-section h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-item {
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 1.5rem;
+  border: 1px solid #3a3a3a;
+}
+
+.project-item h3 {
+  color: #00ff99;
+  font-size: 1.2rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.project-item p {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.project-item .tech-stack {
+  color: #aaa;
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: #1a1a1a;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+/* Posts Section */
+.posts-section {
+  background: #1a1a1a;
+  border-radius: 40px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.posts-section h2 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.post-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.post-item h3 {
+  color: #00ff99;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.post-item .post-date {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.post-item .post-excerpt {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+  
+  nav {
+    padding: 0.7rem 1.5rem;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  nav a {
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+  }
+  
+  nav a.say-hi {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .profile h1 {
+    font-size: 1.8rem;
+  }
+  
+  .profile p {
+    font-size: 1rem;
+  }
+  
+  .about-section {
+    max-width: 100%;
+  }
+  
+  .social-links {
+    padding: 0.8rem 1.5rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
